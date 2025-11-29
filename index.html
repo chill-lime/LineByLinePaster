@@ -77,7 +77,7 @@
             </p>
             
             <div class="flex flex-col sm:flex-row justify-center gap-4 mb-16" id="download">
-                <a href="LineByLinePaster.dmg" onclick="alert('请查看页面底部的【开发者指南】来配置此下载按钮！\nPlease check the [Developer Guide] at the bottom of the page to configure this button!')" class="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white transition-all duration-200 bg-blue-600 font-pj rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600 hover:bg-blue-700 shadow-lg shadow-blue-600/30">
+                <a href="./LineByLinePaster.dmg" class="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white transition-all duration-200 bg-blue-600 font-pj rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600 hover:bg-blue-700 shadow-lg shadow-blue-600/30">
                     <i class="fa-brands fa-apple mr-2 text-2xl"></i>
                     <span data-i18n="btnDownloadMac">下载 macOS 版本</span>
                     <span class="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-2 py-0.5 rounded-full transform group-hover:scale-110 transition">v1.0</span>
@@ -204,7 +204,7 @@
             </div>
             <h2 class="text-2xl font-bold text-slate-900 mb-4" data-i18n="supportTitle">觉得好用？支持开发者</h2>
             <p class="text-slate-600 mb-8 max-w-lg mx-auto" data-i18n="supportDesc">
-                Linebyline Paster 完全免费。如果你喜欢它，可以通过 Ko-fi 请我喝杯咖啡，这将鼓励我继续开发更多好用的工具。
+                Linebyline Paster 是一个完全免费的开源工具。如果你喜欢它，可以通过 Ko-fi 请我喝杯咖啡，这将鼓励我继续开发更多好用的工具。
             </p>
             
             <div class="flex flex-wrap justify-center gap-4">
@@ -221,60 +221,6 @@
                     GitHub Sponsors (Coming Soon)
                 </a> 
                 -->
-            </div>
-        </div>
-    </section>
-
-    <!-- 开发者指南：如何配置下载 -->
-    <section class="py-12 bg-amber-50 border-t-4 border-amber-400">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-start gap-4">
-                <div class="text-amber-600 text-3xl mt-1"><i class="fa-solid fa-circle-info"></i></div>
-                <div class="flex-1">
-                    <h2 class="text-2xl font-bold text-amber-800 mb-4" data-i18n="adminTitle">🎓 站长教程：如何让“下载”按钮生效？</h2>
-                    <p class="text-amber-700 mb-4" data-i18n="adminDesc">
-                        你好！现在这个网站已经建好了，但你的软件文件（.dmg 或 .zip）还没有上传。请按照以下步骤操作，让用户可以下载到你的软件：
-                    </p>
-                    
-                    <div class="bg-white p-6 rounded-xl shadow-sm border border-amber-200 space-y-4">
-                        <div>
-                            <h4 class="font-bold text-amber-900 flex items-center gap-2" data-i18n="adminStep1Title">
-                                <i class="fa-solid fa-upload"></i> 第一步：准备文件
-                            </h4>
-                            <p class="text-sm text-slate-600 mt-1" data-i18n="adminStep1Desc">
-                                将你用 Gemini 做的 Mac 软件打包成 <code class="bg-slate-100 px-1 py-0.5 rounded text-pink-600">LinePaste.dmg</code> 或 <code class="bg-slate-100 px-1 py-0.5 rounded text-pink-600">LinePaste.zip</code>。
-                            </p>
-                        </div>
-
-                        <div>
-                            <h4 class="font-bold text-amber-900 flex items-center gap-2" data-i18n="adminStep2Title">
-                                <i class="fa-solid fa-folder-open"></i> 第二步：上传文件
-                            </h4>
-                            <p class="text-sm text-slate-600 mt-1" data-i18n="adminStep2Desc">
-                                将这个文件放置在<b>此 index.html 网页文件所在的同一个文件夹内</b>。
-                                <br>
-                                <i>(如果你使用 GitHub Pages，就把它上传到你的 GitHub 仓库里)</i>
-                            </p>
-                        </div>
-
-                        <div>
-                            <h4 class="font-bold text-amber-900 flex items-center gap-2" data-i18n="adminStep3Title">
-                                <i class="fa-solid fa-code"></i> 第三步：修改代码
-                            </h4>
-                            <p class="text-sm text-slate-600 mt-1" data-i18n="adminStep3Desc">
-                                打开 <code class="bg-slate-100 px-1 py-0.5 rounded">index.html</code> 文件，搜索 "macOS 版本"。找到对应的 <code>&lt;a href="#" ...&gt;</code> 标签。
-                                <br>
-                                将 <code>href="#"</code> 修改为 <code>href="./LinePaste.dmg"</code> (假设你的文件名是这个)。
-                            </p>
-                        </div>
-                        
-                        <div class="mt-4 pt-4 border-t border-amber-100">
-                            <p class="text-xs text-slate-500 italic" data-i18n="adminNote">
-                                * 完成这些步骤后，你可以删除这段黄色背景的“站长教程”区域 (搜索 HTML 中的 "开发者指南" 并删除整个 section 标签)。
-                            </p>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -368,11 +314,11 @@
                 adminTitle: "🎓 站长教程：如何让“下载”按钮生效？",
                 adminDesc: "你好！现在这个网站已经建好了，但你的软件文件（.dmg 或 .zip）还没有上传。请按照以下步骤操作，让用户可以下载到你的软件：",
                 adminStep1Title: "第一步：准备文件",
-                adminStep1Desc: "将你用 Gemini 做的 Mac 软件打包成 LinePaste.dmg 或 LinePaste.zip。",
+                adminStep1Desc: "将你用 Gemini 做的 Mac 软件打包成 LineByLinePaster.dmg 或 LineByLinePaster.zip。",
                 adminStep2Title: "第二步：上传文件",
                 adminStep2Desc: "将这个文件放置在此 index.html 网页文件所在的同一个文件夹内。",
                 adminStep3Title: "第三步：修改代码",
-                adminStep3Desc: "打开 index.html 文件，搜索 'macOS 版本'。找到对应的 <a href='#'> 标签。将 href='#' 修改为 href='./LinePaste.dmg'。",
+                adminStep3Desc: "打开 index.html 文件，搜索 'macOS 版本'。找到对应的 <a href='#'> 标签。将 href='#' 修改为 href='./LineByLinePaster.dmg'。",
                 adminNote: "* 完成这些步骤后，你可以删除这段黄色背景的“站长教程”区域。",
                 footerDesc: "由 Gemini 协助构建的效率小工具。",
                 footerCopyright: "© 2025 上海闲柠文化发展有限公司",
@@ -393,7 +339,7 @@
                 heroDesc: "A lightweight tool for Mac. Copy multi-line text, then paste line by line with a shortcut. Perfect for forms, coding, and data entry.",
                 btnDownloadMac: "Download for macOS",
                 btnViewDemo: "View Demo",
-                demoAppName: "LinePaste.app",
+                demoAppName: "LineByLinePaster.app",
                 demoStep1: "// 1. Copy multi-line content",
                 demoLine1: "Line 1: User ID 1001",
                 demoLine2: "Line 2: Username Alice",
@@ -424,11 +370,11 @@
                 adminTitle: "🎓 Admin Guide: How to enable downloads?",
                 adminDesc: "Hello! The site is ready, but your software file (.dmg/.zip) isn't uploaded yet. Follow these steps:",
                 adminStep1Title: "Step 1: Prepare File",
-                adminStep1Desc: "Package your Gemini-made Mac app as LinePaste.dmg or LinePaste.zip.",
+                adminStep1Desc: "Package your Gemini-made Mac app as LineByLinePaster.dmg or LineByLinePaster.zip.",
                 adminStep2Title: "Step 2: Upload File",
                 adminStep2Desc: "Place the file in the SAME folder as this index.html file.",
                 adminStep3Title: "Step 3: Edit Code",
-                adminStep3Desc: "Open index.html, search for 'href=\"#\"' inside the download button, and change it to 'href=\"./LinePaste.dmg\"'.",
+                adminStep3Desc: "Open index.html, search for 'href=\"#\"' inside the download button, and change it to 'href=\"./LineByLinePaster.dmg\"'.",
                 adminNote: "* You can delete this yellow 'Admin Guide' section after you are done.",
                 footerDesc: "A productivity tool built with the help of Gemini.",
                 footerCopyright: "© 2025 Shanghai ChillLime Culture Development Co., Ltd.",
