@@ -45,6 +45,7 @@
                 <div class="hidden md:flex space-x-8">
                     <a href="#features" class="text-slate-600 hover:text-blue-600 transition" data-i18n="navFeatures">功能</a>
                     <a href="#usage" class="text-slate-600 hover:text-blue-600 transition" data-i18n="navTutorial">使用教程</a>
+                    <a href="#faq" class="text-slate-600 hover:text-blue-600 transition" data-i18n="navFaq">安装问题</a>
                     <a href="#support" class="text-slate-600 hover:text-pink-600 transition" data-i18n="navSupport">支持开发者</a>
                 </div>
 
@@ -76,7 +77,7 @@
                 专为 Mac 用户设计的轻量级工具。复制多行文本，按快捷键逐行粘贴。<br>表单填写、代码录入、数据迁移的神器。
             </p>
             
-            <div class="flex flex-col sm:flex-row justify-center gap-4 mb-16" id="download">
+            <div class="flex flex-col sm:flex-row justify-center gap-4 mb-6" id="download">
                 <a href="./LineByLinePaster.dmg" class="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white transition-all duration-200 bg-blue-600 font-pj rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600 hover:bg-blue-700 shadow-lg shadow-blue-600/30">
                     <i class="fa-brands fa-apple mr-2 text-2xl"></i>
                     <span data-i18n="btnDownloadMac">下载 macOS 版本</span>
@@ -85,6 +86,14 @@
                 <a href="#usage" class="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-slate-700 transition-all duration-200 bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-200 hover:bg-slate-50 hover:border-slate-300">
                     <i class="fa-solid fa-play mr-2"></i>
                     <span data-i18n="btnViewDemo">查看演示</span>
+                </a>
+            </div>
+            
+            <!-- 安装帮助提示 -->
+            <div class="mb-16">
+                <a href="#faq" class="inline-flex items-center gap-2 text-slate-500 hover:text-red-500 transition text-sm border-b border-slate-300 hover:border-red-400 pb-0.5">
+                    <i class="fa-solid fa-circle-question"></i>
+                    <span data-i18n="cantOpenHint">提示“无法打开”或“文件损坏”？点击查看解决办法</span>
                 </a>
             </div>
 
@@ -196,6 +205,48 @@
         </div>
     </section>
 
+    <!-- FAQ / 安装问题解决 -->
+    <section id="faq" class="py-16 bg-orange-50 border-t border-orange-100">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-start gap-4">
+                <div class="flex-none text-3xl text-orange-500 mt-1">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                </div>
+                <div class="w-full">
+                    <h2 class="text-2xl font-bold text-slate-900 mb-4" data-i18n="faqTitle">安装时提示“无法打开”或“文件已损坏”？</h2>
+                    <p class="text-slate-700 mb-4 leading-relaxed" data-i18n="faqDesc">
+                        这是因为软件没有购买苹果的付费开发者证书，macOS 会默认拦截。这完全正常，软件是安全的。
+                    </p>
+                    
+                    <!-- 方法 1 -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-orange-100 mb-6">
+                        <h3 class="font-bold text-slate-900 mb-3" data-i18n="faqSolutionTitle">✅ 方法一（推荐）：右键打开</h3>
+                        <ol class="list-decimal list-inside space-y-2 text-slate-600 text-sm md:text-base">
+                            <li data-i18n="faqStep1">不要直接双击图标。</li>
+                            <li data-i18n="faqStep2">对着软件图标点击 <strong>鼠标右键</strong>（或按住 Control 键点击）。</li>
+                            <li data-i18n="faqStep3">在弹出的菜单中选择 <strong>“打开”</strong>。</li>
+                            <li data-i18n="faqStep4">在随后的弹窗中再次点击 <strong>“打开”</strong> 即可。</li>
+                        </ol>
+                    </div>
+
+                    <!-- 方法 2 -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-orange-100">
+                        <h3 class="font-bold text-slate-900 mb-3" data-i18n="faqSolution2Title">🛠 方法二：终端修复</h3>
+                        <p class="text-sm text-slate-600 mb-3" data-i18n="faqSolution2Desc">如果方法一无效，请尝试此方法：</p>
+                        <ol class="list-decimal list-inside space-y-2 text-slate-600 text-sm md:text-base">
+                            <li data-i18n="faq2Step1">将软件拖入“应用程序”文件夹。</li>
+                            <li data-i18n="faq2Step2">打开“终端 (Terminal)”应用。</li>
+                            <li data-i18n="faq2Step3">输入以下代码并回车：</li>
+                        </ol>
+                        <div class="mt-3 bg-slate-900 text-slate-300 p-3 rounded-md font-mono text-xs md:text-sm overflow-x-auto select-all border border-slate-700 shadow-inner">
+                            xattr -cr /Applications/LineByLinePaster.app
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- 支持开发区域 -->
     <section id="support" class="py-16 bg-white border-t border-slate-200">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -273,6 +324,7 @@
                 appName: "逐行粘贴",
                 navFeatures: "功能",
                 navTutorial: "使用教程",
+                navFaq: "安装问题",
                 navSupport: "支持开发者",
                 navDownload: "下载",
                 btnFreeDownload: "免费下载",
@@ -283,6 +335,7 @@
                 heroDesc: "专为 Mac 用户设计的轻量级工具。复制多行文本，按快捷键逐行粘贴。<br>表单填写、代码录入、数据迁移的神器。",
                 btnDownloadMac: "下载 macOS 版本",
                 btnViewDemo: "查看演示",
+                cantOpenHint: "提示“无法打开”或“文件损坏”？点击查看解决办法",
                 demoAppName: "逐行粘贴.app",
                 demoStep1: "// 1. 复制以下多行内容",
                 demoLine1: "第一行数据：用户ID 1001",
@@ -308,6 +361,18 @@
                 usageStep2Desc: "像平时一样，选中包含多行文本的内容（Excel 列或文本段落），按下 Cmd + C 复制。",
                 usageStep3Title: "逐行粘贴",
                 usageStep3Desc: "将光标放置到目标输入框中。按下刚才设置的快捷键，每次会粘贴一行内容。所有行粘贴完毕后，复制新的内容继续粘贴。",
+                faqTitle: "安装时提示“无法打开”或“文件已损坏”？",
+                faqDesc: "这是因为软件是个人免费开发，没有购买苹果昂贵的付费证书，macOS 会默认拦截。这完全正常，软件是安全的。",
+                faqSolutionTitle: "✅ 方法一（推荐）：右键打开",
+                faqStep1: "不要直接双击图标。",
+                faqStep2: "对着软件图标点击 <strong>鼠标右键</strong>（或按住 Control 键点击）。",
+                faqStep3: "在弹出的菜单中选择 <strong>“打开”</strong>。",
+                faqStep4: "在随后的弹窗中再次点击 <strong>“打开”</strong> 即可。",
+                faqSolution2Title: "🛠 方法二：终端修复",
+                faqSolution2Desc: "如果方法一依然提示文件损坏，请尝试此命令：",
+                faq2Step1: "将软件拖入“应用程序”文件夹。",
+                faq2Step2: "打开“终端 (Terminal)”应用。",
+                faq2Step3: "复制下方代码粘贴并回车：",
                 supportTitle: "觉得好用？支持开发者",
                 supportDesc: "Linebyline Paster 是一个完全免费的开源工具。如果你喜欢它，可以通过 Ko-fi 请我喝杯咖啡，这将鼓励我继续开发更多好用的工具。",
                 btnKofi: "在 Ko-fi 上支持我",
@@ -320,6 +385,7 @@
                 appName: "Linebyline Paster",
                 navFeatures: "Features",
                 navTutorial: "Tutorial",
+                navFaq: "Install Help",
                 navSupport: "Support",
                 navDownload: "Download",
                 btnFreeDownload: "Free Download",
@@ -330,6 +396,7 @@
                 heroDesc: "A lightweight tool for Mac. Copy multi-line text, then paste line by line with a shortcut.<br>Perfect for forms, coding, and data entry.",
                 btnDownloadMac: "Download for macOS",
                 btnViewDemo: "View Demo",
+                cantOpenHint: "Cannot open the app? Click here for help",
                 demoAppName: "LineByLinePaster.app",
                 demoStep1: "// 1. Copy multi-line content",
                 demoLine1: "Line 1: User ID 1001",
@@ -355,6 +422,18 @@
                 usageStep2Desc: "Select text containing multiple lines (like an Excel column or paragraph) and press Cmd + C as usual.",
                 usageStep3Title: "Paste Line by Line",
                 usageStep3Desc: "Place cursor in the target box. Press your set shortcut to paste one line. Repeat until finished. Copy new content to continue pasting.",
+                faqTitle: "Cannot open app / \"App is damaged\"?",
+                faqDesc: "Since this is a free app created by an independent developer without the expensive Apple Developer Certificate, macOS blocks it by default. The app is safe.",
+                faqSolutionTitle: "✅ Method 1 (Recommended): Right-click Open",
+                faqStep1: "Do NOT double-click the icon.",
+                faqStep2: "<strong>Right-click</strong> (or Control-click) the app icon.",
+                faqStep3: "Select <strong>Open</strong> from the menu.",
+                faqStep4: "Click <strong>Open</strong> again in the dialog box.",
+                faqSolution2Title: "🛠 Method 2: Terminal Fix",
+                faqSolution2Desc: "If Method 1 fails and it says 'Damaged', try this:",
+                faq2Step1: "Move the app to the 'Applications' folder.",
+                faq2Step2: "Open the 'Terminal' app.",
+                faq2Step3: "Paste the code below and press Enter:",
                 supportTitle: "Enjoying the app?",
                 supportDesc: "Linebyline Paster is completely free and open source. If you find it useful, you can support my work by buying me a coffee on Ko-fi.",
                 btnKofi: "Support me on Ko-fi",
