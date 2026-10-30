@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://chill-lime.github.io/LineByLinePaster/sitemap.xml
